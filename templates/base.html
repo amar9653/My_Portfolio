@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Portfolio{% endblock %} - Your Name</title>
+    <title>{% block title %}Portfolio{% endblock %} - AMAR THAKUR</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -13,7 +13,7 @@
     <header>
         <div class="container">
             <nav>
-                <a href="{{ url_for('home') }}" class="logo">Portfolio</a>
+                <a href="{{ url_for('home') }}" class="logo">My Portfolio</a>
                 <ul class="nav-links">
                     <li><a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}">Home</a></li>
                     <li><a href="{{ url_for('about') }}" class="{% if request.endpoint == 'about' %}active{% endif %}">About</a></li>
@@ -44,7 +44,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; <span id="current-year">2024</span> Your Name. All Rights Reserved.</p>
+            <p>&copy; <span id="current-year">2025</span> Dark Virus. All Rights Reserved.</p>
         </div>
     </footer>
 
