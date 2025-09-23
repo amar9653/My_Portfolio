@@ -10,7 +10,7 @@
 1. **Clone or download the project**:
    ```bash
    # If using git
-   git clone <repository-url>
+   git clone <https://github.com/amar9653/My_Portfolio.git>
    cd flask_portfolio
    
    # Or extract the downloaded files to flask_portfolio folder
