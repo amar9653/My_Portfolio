@@ -1,191 +1,29 @@
-# Create about.html
-about_template = '''{% extends "base.html" %}
+{% extends "base.html" %}
 
-{% block title %}About{% endblock %}
+{% block title %}About Me{% endblock %}
 
 {% block content %}
-<!-- About Hero Section -->
-<section class="about-hero">
+<section class="about-page">
     <div class="container">
-        <div class="about-content">
-            <div class="about-image">
-                <img src="{{ url_for('static', filename='images/placeholder.jpg') }}" 
-                     alt="Profile Picture" class="profile-image">
-            </div>
-            
-            <div class="about-text">
-                <h1 class="page-title">About Me</h1>
-                <h2 class="about-subtitle">Passionate Developer & Creative Problem Solver</h2>
-                
-                <p class="about-description">
-                    I'm a full-stack developer with a passion for creating digital experiences 
-                    that make a difference. With over 3 years of experience in web development, 
-                    I've helped businesses and individuals bring their ideas to life through 
-                    elegant, scalable solutions.
-                </p>
-                
-                <p class="about-description">
-                    My journey in technology started with curiosity and has evolved into a 
-                    career focused on continuous learning and innovation. I believe in writing 
-                    clean, maintainable code and creating user experiences that are both 
-                    functional and delightful.
-                </p>
-            </div>
+        <div class="about-header">
+            <h1>About Me</h1>
+            <p>A little bit about my journey, my skills, and what I love to do.</p>
         </div>
-    </div>
-</section>
 
-<!-- Experience & Values Section -->
-<section class="experience-values">
-    <div class="container">
-        <div class="content-grid">
-            <div class="experience-card">
-                <div class="card-icon">
-                    <i class="fas fa-lightbulb"></i>
-                </div>
-                <h3>Innovation</h3>
-                <p>
-                    I'm always exploring new technologies and methodologies to solve 
-                    problems in creative ways. Innovation drives me to push boundaries 
-                    and create solutions that exceed expectations.
-                </p>
+        <div class="about-main">
+            <div class="about-image-column">
+                <img src="{{ url_for('static', filename='images/about.jpg') }}" alt="About Me">
             </div>
-            
-            <div class="experience-card">
-                <div class="card-icon">
-                    <i class="fas fa-users"></i>
-                </div>
-                <h3>Collaboration</h3>
-                <p>
-                    I believe the best solutions come from teamwork. I enjoy working 
-                    with diverse teams, sharing knowledge, and learning from others 
-                    to deliver exceptional results.
-                </p>
-            </div>
-            
-            <div class="experience-card">
-                <div class="card-icon">
-                    <i class="fas fa-rocket"></i>
-                </div>
-                <h3>Excellence</h3>
-                <p>
-                    Quality is never an accident. I'm committed to delivering 
-                    high-quality code and solutions that are reliable, scalable, 
-                    and maintainable.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
+            <div class="about-text-column">
+                <h2>Who I Am</h2>
+                <p>Hello! I'm [Your Name], a full-stack developer with a passion for building beautiful and functional web applications. My journey into the world of programming started with a simple curiosity about how websites worked, and it has since grown into a fulfilling career.</p>
+                <p>I specialize in Python and JavaScript, and I'm always eager to learn new technologies and frameworks. I believe in the power of clean code, user-centric design, and continuous learning.</p>
 
-<!-- Technical Journey -->
-<section class="technical-journey">
-    <div class="container">
-        <h2 class="section-title">My Technical Journey</h2>
-        
-        <div class="journey-timeline">
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>2020 - Getting Started</h3>
-                    <p>
-                        Began my journey with HTML, CSS, and JavaScript. Built my first 
-                        websites and discovered my passion for web development.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>2021 - Backend Development</h3>
-                    <p>
-                        Dove into server-side development with Python and Flask. Learned 
-                        about databases, APIs, and system architecture.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>2022 - Full Stack Mastery</h3>
-                    <p>
-                        Mastered full-stack development, working with React, Node.js, 
-                        and various databases. Started taking on complex projects.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>2023 - Present</h3>
-                    <p>
-                        Focusing on scalable architectures, DevOps practices, and 
-                        mentoring other developers. Always learning and growing.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+                <h2>My Journey</h2>
+                <p>My career has been a journey of growth and discovery. I started with front-end development, mastering HTML, CSS, and JavaScript. I then expanded my skills to the back-end, learning Python, Flask, and database management. Today, I'm a well-rounded developer who can take a project from concept to completion.</p>
 
-<!-- Interests & Hobbies -->
-<section class="interests">
-    <div class="container">
-        <h2 class="section-title">Beyond Code</h2>
-        <p class="section-subtitle">
-            When I'm not coding, you can find me pursuing these interests
-        </p>
-        
-        <div class="interests-grid">
-            <div class="interest-item">
-                <i class="fas fa-camera"></i>
-                <h3>Photography</h3>
-                <p>Capturing moments and perspectives through the lens</p>
-            </div>
-            
-            <div class="interest-item">
-                <i class="fas fa-book"></i>
-                <h3>Reading</h3>
-                <p>Always learning from books on technology, design, and business</p>
-            </div>
-            
-            <div class="interest-item">
-                <i class="fas fa-hiking"></i>
-                <h3>Hiking</h3>
-                <p>Exploring nature and finding inspiration in the outdoors</p>
-            </div>
-            
-            <div class="interest-item">
-                <i class="fas fa-music"></i>
-                <h3>Music</h3>
-                <p>Playing guitar and discovering new artists and genres</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Call to Action -->
-<section class="cta">
-    <div class="container">
-        <div class="cta-content">
-            <h2>Let's Work Together</h2>
-            <p>
-                I'm always interested in new opportunities and exciting projects. 
-                Whether you have a specific project in mind or just want to connect, 
-                I'd love to hear from you.
-            </p>
-            <div class="cta-buttons">
-                <a href="{{ url_for('contact') }}" class="btn btn-primary">
-                    <i class="fas fa-envelope"></i>
-                    Get In Touch
-                </a>
-                <a href="{{ url_for('resume') }}" class="btn btn-outline">
-                    <i class="fas fa-download"></i>
-                    Download Resume
-                </a>
+                <h2>Why Work With Me</h2>
+                <p>I'm not just a developer; I'm a problem-solver. I'm passionate about understanding your needs and translating them into a product that you and your users will love. I'm a strong communicator, a dedicated team player, and I'm committed to delivering high-quality work on time.</p>
             </div>
         </div>
     </div>
