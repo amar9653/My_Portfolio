@@ -1,0 +1,231 @@
+{% extends "base.html" %}
+
+{% block title %}Skills{% endblock %}
+
+{% block content %}
+<!-- Skills Header -->
+<section class="skills-header">
+    <div class="container">
+        <h1 class="page-title">Technical Skills</h1>
+        <p class="page-subtitle">
+            A comprehensive overview of my technical expertise and proficiencies
+        </p>
+    </div>
+</section>
+
+<!-- Skills Categories -->
+<section class="skills-categories">
+    <div class="container">
+        <!-- Skills Navigation -->
+        <div class="skills-nav">
+            <button class="skill-nav-btn active" data-category="frontend">
+                <i class="fas fa-paint-brush"></i>
+                Frontend
+            </button>
+            <button class="skill-nav-btn" data-category="backend">
+                <i class="fas fa-server"></i>
+                Backend
+            </button>
+            <button class="skill-nav-btn" data-category="tools">
+                <i class="fas fa-tools"></i>
+                Tools & DevOps
+            </button>
+        </div>
+        
+        <!-- Frontend Skills -->
+        <div class="skills-section active" id="frontend">
+            <h2 class="skills-section-title">Frontend Development</h2>
+            <p class="skills-section-desc">
+                Creating engaging, responsive user interfaces with modern technologies
+            </p>
+            
+            <div class="skills-grid">
+                {% for skill in skills.frontend %}
+                <div class="skill-card" data-skill="{{ skill.lower() }}">
+                    <div class="skill-icon">
+                        {% if skill == 'HTML5' %}
+                            <i class="fab fa-html5"></i>
+                        {% elif skill == 'CSS3' %}
+                            <i class="fab fa-css3-alt"></i>
+                        {% elif skill == 'JavaScript' %}
+                            <i class="fab fa-js"></i>
+                        {% elif skill == 'React' %}
+                            <i class="fab fa-react"></i>
+                        {% elif skill == 'Vue.js' %}
+                            <i class="fab fa-vuejs"></i>
+                        {% elif skill == 'Bootstrap' %}
+                            <i class="fab fa-bootstrap"></i>
+                        {% else %}
+                            <i class="fas fa-code"></i>
+                        {% endif %}
+                    </div>
+                    <h3 class="skill-name">{{ skill }}</h3>
+                    <div class="skill-level">
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="90"></div>
+                        </div>
+                        <span class="skill-percentage">90%</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- Backend Skills -->
+        <div class="skills-section" id="backend">
+            <h2 class="skills-section-title">Backend Development</h2>
+            <p class="skills-section-desc">
+                Building robust server-side applications and APIs
+            </p>
+            
+            <div class="skills-grid">
+                {% for skill in skills.backend %}
+                <div class="skill-card" data-skill="{{ skill.lower() }}">
+                    <div class="skill-icon">
+                        {% if skill == 'Python' %}
+                            <i class="fab fa-python"></i>
+                        {% elif skill == 'Flask' %}
+                            <i class="fas fa-fire"></i>
+                        {% elif skill == 'Django' %}
+                            <i class="fab fa-python"></i>
+                        {% elif skill == 'Node.js' %}
+                            <i class="fab fa-node-js"></i>
+                        {% elif skill == 'Express' %}
+                            <i class="fas fa-server"></i>
+                        {% else %}
+                            <i class="fas fa-code"></i>
+                        {% endif %}
+                    </div>
+                    <h3 class="skill-name">{{ skill }}</h3>
+                    <div class="skill-level">
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="85"></div>
+                        </div>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- Tools & DevOps Skills -->
+        <div class="skills-section" id="tools">
+            <h2 class="skills-section-title">Tools & DevOps</h2>
+            <p class="skills-section-desc">
+                Development tools, version control, and deployment technologies
+            </p>
+            
+            <div class="skills-grid">
+                {% for skill in skills.tools %}
+                <div class="skill-card" data-skill="{{ skill.lower() }}">
+                    <div class="skill-icon">
+                        {% if skill == 'Git' %}
+                            <i class="fab fa-git-alt"></i>
+                        {% elif skill == 'Docker' %}
+                            <i class="fab fa-docker"></i>
+                        {% elif skill == 'AWS' %}
+                            <i class="fab fa-aws"></i>
+                        {% elif skill == 'PostgreSQL' %}
+                            <i class="fas fa-database"></i>
+                        {% elif skill == 'MongoDB' %}
+                            <i class="fas fa-leaf"></i>
+                        {% else %}
+                            <i class="fas fa-tools"></i>
+                        {% endif %}
+                    </div>
+                    <h3 class="skill-name">{{ skill }}</h3>
+                    <div class="skill-level">
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="80"></div>
+                        </div>
+                        <span class="skill-percentage">80%</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Certifications & Learning -->
+<section class="certifications">
+    <div class="container">
+        <h2 class="section-title">Certifications & Learning</h2>
+        
+        <div class="cert-grid">
+            <div class="cert-card">
+                <div class="cert-icon">
+                    <i class="fab fa-aws"></i>
+                </div>
+                <h3>AWS Certified Solutions Architect</h3>
+                <p>Amazon Web Services</p>
+                <span class="cert-date">2023</span>
+            </div>
+            
+            <div class="cert-card">
+                <div class="cert-icon">
+                    <i class="fab fa-python"></i>
+                </div>
+                <h3>Python for Data Science</h3>
+                <p>Coursera</p>
+                <span class="cert-date">2022</span>
+            </div>
+            
+            <div class="cert-card">
+                <div class="cert-icon">
+                    <i class="fab fa-react"></i>
+                </div>
+                <h3>React Developer Certification</h3>
+                <p>Meta</p>
+                <span class="cert-date">2022</span>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Skills category switching
+    const skillNavBtns = document.querySelectorAll('.skill-nav-btn');
+    const skillSections = document.querySelectorAll('.skills-section');
+    
+    skillNavBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const category = btn.dataset.category;
+            
+            // Update active button
+            skillNavBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            // Update active section
+            skillSections.forEach(section => {
+                section.classList.remove('active');
+                if (section.id === category) {
+                    section.classList.add('active');
+                }
+            });
+            
+            // Animate skill bars
+            animateSkillBars();
+        });
+    });
+    
+    // Animate skill bars
+    function animateSkillBars() {
+        const skillBars = document.querySelectorAll('.skills-section.active .skill-progress');
+        
+        skillBars.forEach((bar, index) => {
+            const level = bar.dataset.level;
+            setTimeout(() => {
+                bar.style.width = level + '%';
+            }, index * 100);
+        });
+    }
+    
+    // Initialize skill bars animation
+    document.addEventListener('DOMContentLoaded', () => {
+        animateSkillBars();
+    });
+</script>
+{% endblock %}

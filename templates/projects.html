@@ -1,0 +1,269 @@
+{% extends "base.html" %}
+
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+<!-- Projects Header -->
+<section class="projects-header">
+    <div class="container">
+        <h1 class="page-title">My Projects</h1>
+        <p class="page-subtitle">
+            A showcase of my work, featuring web applications, tools, and creative solutions
+        </p>
+    </div>
+</section>
+
+<!-- Project Filters -->
+<section class="project-filters">
+    <div class="container">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="web">Web Apps</button>
+            <button class="filter-btn" data-filter="api">APIs</button>
+            <button class="filter-btn" data-filter="frontend">Frontend</button>
+            <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Grid -->
+<section class="projects-grid">
+    <div class="container">
+        <div class="projects-container">
+            {% for project in projects %}
+            <article class="project-card" data-category="fullstack">
+                <div class="project-image">
+                    <img src="{{ url_for('static', filename='images/' + project.image) }}" 
+                         alt="{{ project.title }}" loading="lazy">
+                    <div class="project-overlay">
+                        <div class="project-actions">
+                            <a href="{{ project.demo_link }}" class="project-btn" target="_blank"
+                               rel="noopener noreferrer">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Live Demo</span>
+                            </a>
+                            <a href="{{ project.source_link }}" class="project-btn" target="_blank"
+                               rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>
+                                <span>Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-content">
+                    <h3 class="project-title">{{ project.title }}</h3>
+                    <p class="project-description">{{ project.description }}</p>
+                    
+                    <div class="project-tech">
+                        {% for tech in project.technologies %}
+                        <span class="tech-tag">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="{{ project.demo_link }}" class="link-btn demo" target="_blank">
+                            <i class="fas fa-play"></i>
+                            Demo
+                        </a>
+                        <a href="{{ project.source_link }}" class="link-btn code" target="_blank">
+                            <i class="fab fa-github"></i>
+                            Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+            
+            <!-- Additional Project Cards -->
+            <article class="project-card" data-category="frontend">
+                <div class="project-image">
+                    <img src="{{ url_for('static', filename='images/placeholder.jpg') }}" 
+                         alt="Weather App" loading="lazy">
+                    <div class="project-overlay">
+                        <div class="project-actions">
+                            <a href="#" class="project-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Live Demo</span>
+                            </a>
+                            <a href="#" class="project-btn">
+                                <i class="fab fa-github"></i>
+                                <span>Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-content">
+                    <h3 class="project-title">Weather Dashboard</h3>
+                    <p class="project-description">
+                        A responsive weather application with real-time data, forecasts, 
+                        and beautiful visualizations.
+                    </p>
+                    
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Weather API</span>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="#" class="link-btn demo">
+                            <i class="fas fa-play"></i>
+                            Demo
+                        </a>
+                        <a href="#" class="link-btn code">
+                            <i class="fab fa-github"></i>
+                            Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="project-card" data-category="api">
+                <div class="project-image">
+                    <img src="{{ url_for('static', filename='images/placeholder.jpg') }}" 
+                         alt="REST API" loading="lazy">
+                    <div class="project-overlay">
+                        <div class="project-actions">
+                            <a href="#" class="project-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>API Docs</span>
+                            </a>
+                            <a href="#" class="project-btn">
+                                <i class="fab fa-github"></i>
+                                <span>Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-content">
+                    <h3 class="project-title">Blog API Service</h3>
+                    <p class="project-description">
+                        RESTful API for blog management with authentication, CRUD operations, 
+                        and comprehensive documentation.
+                    </p>
+                    
+                    <div class="project-tech">
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">SQLAlchemy</span>
+                        <span class="tech-tag">JWT</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="#" class="link-btn demo">
+                            <i class="fas fa-book"></i>
+                            Docs
+                        </a>
+                        <a href="#" class="link-btn code">
+                            <i class="fab fa-github"></i>
+                            Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- GitHub Stats -->
+<section class="github-stats">
+    <div class="container">
+        <h2 class="section-title">GitHub Activity</h2>
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fab fa-github"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 class="stat-number">50+</h3>
+                    <p class="stat-label">Repositories</p>
+                </div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 class="stat-number">200+</h3>
+                    <p class="stat-label">Stars Earned</p>
+                </div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-code-branch"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 class="stat-number">1000+</h3>
+                    <p class="stat-label">Commits</p>
+                </div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 class="stat-number">25+</h3>
+                    <p class="stat-label">Contributors</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="github-link">
+            <a href="#" class="btn btn-outline" target="_blank">
+                <i class="fab fa-github"></i>
+                View GitHub Profile
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Project filtering functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.dataset.filter;
+            
+            // Update active filter button
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            // Filter project cards
+            projectCards.forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeInUp 0.6s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+    
+    // Lazy loading for project images
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.classList.add('loaded');
+                observer.unobserve(img);
+            }
+        });
+    });
+    
+    document.querySelectorAll('.project-card img').forEach(img => {
+        imageObserver.observe(img);
+    });
+</script>
+{% endblock %}
