@@ -1,3 +1,4 @@
+
 :root {
     --primary-color: #6a89cc;
     --secondary-color: #4a69bd;
@@ -26,6 +27,10 @@ body.dark-mode {
     color: var(--dark-text);
 }
 
+main {
+    padding-top: 6rem;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -34,7 +39,6 @@ body.dark-mode {
 
 /* Header */
 header {
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -100,11 +104,6 @@ body.dark-mode .nav-links a {
 
 body.dark-mode #theme-toggle {
     color: var(--dark-text);
-}
-
-/* Page Headers */
-.home-page, .about-page, .skills-page, .projects-page, .resume-page, .contact-page {
-    padding-top: 6rem;
 }
 
 .home-header, .about-header, .skills-header, .projects-header, .resume-header, .contact-header {
