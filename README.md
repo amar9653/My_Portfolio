@@ -6,14 +6,6 @@ A personal portfolio website built with Flask to showcase my skills, projects, a
 
 [Link to Live Demo](https://your-demo-link.com)
 
-## Features
-
-*   **Home Page:** A welcoming hero section and a brief introduction.
-*   **About Page:** Detailed biography and profile information.
-*   **Skills Page:** A showcase of technical skills, organized by category.
-*   **Projects Page:** A display of my portfolio projects with descriptions, technologies used, and links to demos and source code.
-*   **Resume Page:** A summary of my work experience and education.
-*   **Contact Page:** A contact form to get in touch.
 
 ## Technologies Used
 
